@@ -46,12 +46,14 @@
 ## Файлы и запуск
 
 Код: `src/main/java/edu/course/lab02/BankAccount.java`, `DataSample.java`, `SampleStatus.java`.
+Демонстрация: `src/main/java/edu/course/lab02/Demo.java`.
 Проверки: `src/test/java/edu/course/lab02/BankAccountTest.java`, `DataSampleTest.java`.
 
 Требуется JDK 25. Из корня репозитория:
 
 ```bash
 ./mvnw -pl lab02 test
+java -cp lab02/target/classes edu.course.lab02.Demo
 ```
 
 Windows PowerShell:
@@ -60,8 +62,15 @@ Windows PowerShell:
 .\mvnw.cmd -pl lab02 test
 ```
 
-В IntelliJ IDEA можно запустить класс тестов зелёным треугольником рядом с его названием.
-Отдельный `main` для выполнения лабораторной не требуется.
+В IntelliJ IDEA откройте корневой `pom.xml` как Maven-проект и выберите JDK 25.
+Проверьте, что выбрана ветка `lab/02-classes`.
+Для демонстрации запустите `Demo.main()` зелёным треугольником рядом с методом.
+Для проверки запустите `BankAccountTest` и `DataSampleTest` либо Maven → lab02 → Lifecycle → test.
+В модуле 27 JUnit-тестов: 9 для счёта и 18 для наблюдения.
+
+Демо показывает баланс 120, запрет списания сверх остатка, среднее признаков 4,
+смену статуса NEW → READY и защиту массива от внешних изменений.
+Вывод находится только в `Demo`; классы моделей не используют консоль.
 
 ## Объём работы
 
